@@ -1,0 +1,18 @@
+#intro {
+    background-image: url('../../../assets/background-rent.jpg');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-attachment: fixed;
+    height: 100vh;
+}
+
+#scroller {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: rgb(112, 112, 112) rgb(221, 221, 221);
+    scrollbar-width: thin;
+    padding: 5px;
+}
