@@ -1,22 +1,26 @@
-<div class="row">
-    <div class="col-lg-6  col-md-10 col-sm-12 mx-auto">
-        <div class="card p-2 m-3">
-            <div class="card-header">
-                <h3 class="text-center">Login</h3>
-            </div>
-            <div class="card-body">
-                <form (submit)="login()">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" [(ngModel)]="loginForm.email" name="email" id="" class="form-control" placeholder="example@email.com" required autofocus>
+<div id="intro" class="bg-image">
+    <div class="d-flex align-items-start h-100" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-md-8 text-light">
+                    <div class="mt-5 p5-0">
+                        <div class="text-center">
+                            <p class="h1" id="login">Login</p>
+                        </div>
+                        <form (submit)="login()">
+                            <div class="form-group">
+                                <label class="mt-1 mb-1">Email</label>
+                                <input type="email" [(ngModel)]="loginForm.email" name="email" id="" class="form-control" placeholder="example@email.com" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label class="mt-1 mb-1">Password</label>
+                                <input type="text" [(ngModel)]="loginForm.password" name="password" id="" class="form-control" placeholder="password" type="password" required autofocus>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-block">LogIn</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="text" [(ngModel)]="loginForm.password" name="password" id="" class="form-control" placeholder="password" type="password" required autofocus>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary btn-block">LogIn</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
