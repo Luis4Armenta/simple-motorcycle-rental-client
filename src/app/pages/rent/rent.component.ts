@@ -47,7 +47,7 @@ export class RentComponent implements OnInit {
 
 
   pickSchedule(scheduleNumber: number) {
-    if (this.ihaveSchedule && (this.mySchedule > 0 && this.mySchedule < 9)) {
+    if (this.ihaveSchedule && (this.mySchedule > 0 && this.mySchedule < 25)) {
       this.returnMotorcycle();
     } else {
       this.takeMotorcycle(scheduleNumber);
