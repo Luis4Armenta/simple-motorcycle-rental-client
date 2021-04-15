@@ -11,14 +11,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { RentComponent } from './pages/rent/rent.component';
-import { SocketIoModule } from 'ngx-socket-io'
+import { SocketIoModule } from 'ngx-socket-io';
+import { LogoutComponent } from './components/logout/logout.component';
+import { RegisterComponent } from './pages/register/register.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    RentComponent
+    RentComponent,
+    LogoutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

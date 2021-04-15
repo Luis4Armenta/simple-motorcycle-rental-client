@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark p-0 m-0">
+    <div class="container-fluid ">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <ul class="navbar-nav justify-content-end ">
+            <li class="nav-item mr-auto" (click)="login()" *ngIf="!isLogin" id="logout">
+                <a class="nav-link active mr-auto" aria-current="page">login</a>
+            </li>
+            <li class="nav-item mr-auto" (click)="register()" *ngIf="!isLogin" id="logout">
+                <a class="nav-link active mr-auto" aria-current="page">Register</a>
+            </li>
+            <li class="nav-item mr-auto" (click)="logOut()" *ngIf="isLogin" id="logout">
+                <a class="nav-link active mr-auto" aria-current="page">LogOut</a>
+            </li>
+        </ul>
+    </div>
+</nav>
