@@ -1,7 +1,7 @@
 <div id="intro" class="bg-image">
     <div class="d-flex align-items-start h-100" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="container">
-            <div class="h1 text-center text-light mt-4" style="letter-spacing: 0.2em;">
+            <div class="h1 text-center text-light mt-4" style="letter-spacing: 0.2em;" (click)="takeMotorcycle(1)">
                 Reserve your place now
             </div>
             <div class="row justify-content-center">
@@ -9,8 +9,8 @@
                     <div id="scroller">
                         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-1">
                             <div class="col" *ngFor="let motorcycle of motorcycles; let i = index">
-                                <div class="card h-100">
-                                    <div class="card-body">
+                                <div class="card h-100 schedule" [ngClass]="{'bg-success': ihaveSchedule && i == mySchedule-1, 'bg-danger text-white': motorcycle.available <= 0}" (click)="pickSchedule(i+1)">
+                                    <div class="card-body schedule">
                                         <h5 class="card-title text-center">{{ schedule[i] }} - {{ schedule[i+1] }}</h5>
                                         <p class="card-text">{{ motorcycle.available }} Disponibles</p>
                                     </div>

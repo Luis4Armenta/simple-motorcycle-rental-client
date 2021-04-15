@@ -28,10 +28,6 @@ export class AuthServiceService {
     return this.http.post<boolean>(`${this.URL}/register`, data)
   }
 
-  hasMotorcycle(): Observable<boolean> {
-    return this.http.get<boolean>(`${this.URL}/hasmotorcycle`)
-  }
-
   getToken() {
     return localStorage.getItem('token');
   }

@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { RentComponent } from './pages/rent/rent.component';
+import { SocketIoModule } from 'ngx-socket-io'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RentComponent } from './pages/rent/rent.component';
     MdbModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocketIoModule
   ],
   providers: [
     {
