@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthResponse } from '../interfaces/auth-response';
@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private URL = 'http://localhost:3000';
+  @Output() getLoggedIn: EventEmitter<boolean> = new EventEmitter();
 
   constructor(
     private http: HttpClient,
@@ -21,11 +22,12 @@ export class AuthService {
   ) { }
 
   login(data: LoginForm): Observable<AuthResponse> {
+    this.getLoggedIn.emit(true);
     return this.http.post<AuthResponse>(`${this.URL}/login`, data);
   }
 
   register(data: RegisterForm): Observable<boolean> {
-    return this.http.post<boolean>(`${this.URL}/register`, data)
+    return this.http.post<boolean>(`${this.URL}/register`, data);
   }
 
   getToken() {
@@ -33,6 +35,14 @@ export class AuthService {
   }
 
   loggedIn(): boolean {
+    if (!!localStorage.getItem('token')) this.getLoggedIn.emit(true);
     return !!localStorage.getItem('token')
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    window.location.reload();
+    this.getLoggedIn.emit(false)
   }
 }
