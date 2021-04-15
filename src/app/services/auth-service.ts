@@ -5,6 +5,7 @@ import { AuthResponse } from '../interfaces/auth-response';
 import { RegisterForm } from '../interfaces/register-form';
 import { LoginForm } from '../interfaces/login-form';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private URL = 'http://localhost:3000';
+  private URL = environment.apiUrl;
 
   constructor(
     private http: HttpClient,

@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class SocketService extends Socket {
 
   constructor() {
     super({
-      url: 'http://localhost:3000',
+      url: environment.apiUrl,
       options: {
         query: {
           token: localStorage.getItem('token')
